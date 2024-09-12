@@ -7,6 +7,7 @@ import FeaturePage from '@/components/Features';
 import Hero from '@/components/Hero';
 import Head from 'next/head'; // Import for SEO metadata
 import quizMakers from '../../data/quizMakers'; // Import quiz maker data from the data folder
+import { Suspense } from 'react';
 
 const QuizMakerList = () => {
   const params = useParams();
@@ -14,6 +15,9 @@ const QuizMakerList = () => {
 
   return (
     <>
+    <Suspense>
+
+
       <Head>
         <title>{siteName} Alternatives | Best Quiz Makers</title>
         <meta
@@ -87,6 +91,8 @@ const QuizMakerList = () => {
           ))}
         </div>
       </section>
+      </Suspense>
+
     </>
   );
 };

@@ -1,4 +1,5 @@
 import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
 
 // This function generates the metadata for each page
 export async function generateMetadata({ params }) {
@@ -37,9 +38,16 @@ export default function HeadlinePage({ params }) {
   }
 
   return (
-    <div>
+    <>
+
+<Suspense>
+<div>
       <h1>{headline.replace(/-/g, ' ')}</h1>
       {/* Add your page content here */}
     </div>
+        </Suspense>
+
+    </>
+ 
   );
 }
